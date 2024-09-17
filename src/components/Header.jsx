@@ -11,9 +11,10 @@ export default function Header(props){
     return(
         <div className='header'>
           <img src={props.logo} className='logo'/>
-          <p className='header-hamburgers'>{props.hamburguers}</p>
-          <p className='header-bolos'>{props.bolos}</p>
-          
+        
+        <div><input />
+          <button>pesquisar</button>
+        </div>  
 
         <div >
           <img className='carrinho' src={sidebarAberta ? props.carrinhoCompras : carrinhoCompras }
@@ -21,7 +22,7 @@ export default function Header(props){
           />
        
        
-       <div className={sidebarAberta ? 'abrir' : 'fechar' }>
+       <div className={sidebarAberta ? 'abrir': 'fechar' }>
 
        </div>
        </div>

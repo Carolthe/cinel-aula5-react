@@ -1,13 +1,15 @@
 export default function Produtos(props){
 
-    return(
-        <div className="produtos">
-           <h1 className="nomeproduto">{props.nomeproduto}</h1>
+    return(      
            <div>
+        <div className="produtos">
             <img className="imagens" src={props.imagem} />
+           <div className="paragrafo">
             <p>{props.paragrafo}</p>
-            <button>{props.button}</button>
+            <p className="preço">{props.preço}</p>
+            </div>
+            <button className="button-produtos">{props.button}</button>
            </div>
-        </div>
+        </div> 
     )
 }
