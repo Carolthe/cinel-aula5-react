@@ -12,8 +12,8 @@ export default function Header(props){
         <div className='header'>
           <img src={props.logo} className='logo'/>
         
-        <div><input />
-          <button>pesquisar</button>
+        <div><input className="input" placeholder="Qual sobremesa você gostaria de pedir?" />
+          <button className="lupa">🔎</button>
         </div>  
 
         <div >

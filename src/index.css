@@ -19,14 +19,24 @@ body{
   font-size: 200%;
   color: rgb(86, 86, 86);
 }
-.header-hamburgers:hover{
-  color: red;
+.input{
+  width: 350px;
+  height: 35px;
+  border-radius: 10px;
+  border: solid 2px rgb(155, 155, 155);
+  padding-left: 10px;
 }
+.lupa{
+  width: 50px;
+  height: 40px;
+  margin-left: 15px;
+  border: none;
+  background-color: pink;
+  border-radius: 10px;
+}
+
 .logo{
   width: 100px;
-}
-.header-bolos:hover{
-  color: red;
 }
 
 /* Sidebar */
@@ -54,7 +64,7 @@ body{
 
   left: 1150px;
   margin-top: 90px;
-  width: 300px;
+  width: 320px;
   height: 88%;
   position: fixed;
   top: 0;
@@ -69,9 +79,9 @@ body{
   height: 70vh;
   gap: 40px;
 }
-.imagem{
+/* .imagem{
   width: 30%
-}
+} */
 
 .sobremesa{
   padding-left: 30px;
@@ -80,20 +90,19 @@ body{
   background: rgba(255, 109, 109, 0.3);
   border-radius: 70px;
   display: flex;
-  align-items: end;
+  align-items: center;
+  justify-content: center;
  
 }
 .descrição{
-  font-size: 2.6vw;
-  color: white;
- 
- 
+  font-size: 50px;
+  color: white; 
 }
 
 /* Pagina 2 */
 
 .produtos{
-  margin-top: 300px;
+  margin-top: 230px;
  }
 .caixa{
   display: flex;
