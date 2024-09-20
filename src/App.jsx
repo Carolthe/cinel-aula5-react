@@ -34,7 +34,7 @@ const sobremesas =[
   <div>
       <Header logo={logo} hamburguers="" bolos="" carrinhoCompras={fechar}/>
     <div className='div-img'>
-      <Templete   descrição="Bem-vindo(a) a nossa loja de sobremesas!!" />
+      <Templete   descricao="Bem-vindo(a) a nossa loja de sobremesas!!" />
     </div>
     <div className='caixa'>
   

@@ -36,7 +36,7 @@ body{
 }
 
 .logo{
-  width: 100px;
+  width: 150px;
 }
 
 /* Sidebar */
@@ -87,6 +87,8 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  padding-right: 40px;
  
 }
 .descrição{
@@ -167,4 +169,9 @@ body{
   background-color: rgba(255, 109, 109, 0.3);
   height: 250px;
   width: 100%;
+}
+.descrição-apresentacao{
+  color: rgb(255, 255, 255);
+  width:800px ;
+ font-size: 25px;
 }

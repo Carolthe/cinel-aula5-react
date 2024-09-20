@@ -1,5 +1,6 @@
 import { useState } from "react"
 import carrinhoCompras from '../img/carrinhoCompras.png'
+import lupa from '../img/lupa.png'
 
 export default function Header(props){
   const [sidebarAberta, setSidebarAberta] = useState(false)
@@ -13,7 +14,7 @@ export default function Header(props){
           <img src={props.logo} className='logo'/>
         
         <div><input className="input" placeholder="Qual sobremesa você gostaria de pedir?" />
-          <button className="lupa">🔎</button>
+          <button className="lupa"><img src={lupa} /></button>
         </div>  
 
         <div >
