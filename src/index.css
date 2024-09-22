@@ -21,18 +21,30 @@ body{
 }
 .input{
   width: 350px;
-  height: 35px;
+  height: 40px;
   border-radius: 10px;
-  border: solid 2px rgb(155, 155, 155);
+  border: solid 2px rgba(110, 50, 50, 0.711);
   padding-left: 10px;
+
 }
-.lupa{
+.button-lupa{
   width: 50px;
   height: 40px;
   margin-left: 15px;
-  border: none;
-  background-color: pink;
+  background-color: white;
+  border:solid 2px rgba(110, 50, 50, 0.711);
   border-radius: 10px;
+}
+.button-lupa:hover{
+  background-color: rgba(180, 49, 49, 0.841);
+}
+.div-pesquisa{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.img-lupa{
+  margin-top: 5px;
 }
 
 .logo{
@@ -82,7 +94,7 @@ body{
   padding-left: 30px;
   width: 90%;
   height: 600px;
-  background: rgba(255, 109, 109, 0.3);
+  background: rgba(180, 49, 49, 0.841);
   border-radius: 70px;
   display: flex;
   align-items: center;
@@ -93,8 +105,14 @@ body{
 }
 .descrição{
   font-size: 50px;
-  color: white; 
+  color: rgb(0, 0, 0); 
 }
+.descrição-apresentacao{
+  color: rgba(0, 0, 0, 0.552);
+  width:800px ;
+  font-size: 25px;
+}
+
 
 /* Pagina 2 */
 
@@ -129,9 +147,14 @@ body{
 .button-produtos{
   width: 250px;
   height: 40px;
-  border: none;
+  border: solid 2px rgba(180, 49, 49, 0.841);
   border-radius: 10px;
-  background-color:  rgb(255, 109, 109);
+  background-color: white ;
+  color: rgb(0, 0, 0);
+}
+.button-produtos:hover{
+  background-color: rgba(180, 49, 49, 0.841) ;
+  border: solid 2px black;
   color: white;
 }
 .container{
@@ -166,12 +189,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 109, 109, 0.3);
+  background-color:rgba(180, 49, 49, 0.841);
   height: 250px;
   width: 100%;
-}
-.descrição-apresentacao{
-  color: rgb(255, 255, 255);
-  width:800px ;
- font-size: 25px;
 }
