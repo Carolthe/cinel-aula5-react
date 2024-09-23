@@ -1,4 +1,4 @@
-// export default function Apreentação(){
+// export default function Apreentacao(){
 //     return(
 //         <div className="div-apresentação">
 //         <div className="apresentação">

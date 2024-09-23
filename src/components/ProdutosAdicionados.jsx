@@ -1,4 +1,4 @@
-export default function ProdutosAdd (){
+export default function ProdutosAdicionados (){
     return(
         <div className=" container">
             <div className="img-add">

@@ -19,8 +19,12 @@ export default function Header(props){
 
         <div >
           <img className='carrinho' src={sidebarAberta ? props.carrinhoCompras : carrinhoCompras }
-          onClick={alterar}
-          />
+          onClick={alterar}/>
+            {sidebarAberta && (
+    <div className="">
+    <p>teste</p>
+    </div>
+    )}
        
        
        <div className={sidebarAberta ? 'abrir': 'fechar' }>
