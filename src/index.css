@@ -60,17 +60,14 @@ body{
 .sidebar img{
   cursor: pointer;
 }
+
 .fechar{
   left: 0;
   width: 0;
   margin: 0;
   
 }
-.carrinho{
-  
-}
 .abrir{
-  
   margin-top: 90px;
   width: 320px;
   height: 88%;
@@ -90,7 +87,7 @@ body{
 .sobremesa{
   padding-left: 30px;
   width: 90%;
-  height: 600px;
+  height: 75%;
   background: rgba(180, 49, 49, 0.841);
   border-radius: 70px;
   display: flex;
@@ -172,25 +169,40 @@ body{
   color: white;
 }
 .container{
-  width: 180px;
+  width: 120px;
+  background-color: aqua;
 }
-
+.container-quantidade{
+  display: flex;
+ 
+  
+}
 .img-add{
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 30px;
-  left: -50px;  
-
+  
+   
+}
+.produto-add{
+  font-size: 13px;
+}
+.valor-produtos{
+  font-size: 13px;
 }
 
 .quantidade{
-  display: flex;
+  width: 20px;
+  height: 15px;
+}
+.numero-produtos{
+  font-size: 15px;
 }
 .remover{
   display: flex;
   justify-content: end;
   position: relative;
+  font-size: 15px;
   bottom: 36px;
   
 }

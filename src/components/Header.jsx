@@ -1,6 +1,7 @@
 import { useState } from "react"
 import carrinhoCompras from '../img/carrinhoCompras.png'
 import lupa from '../img/lupa.png'
+import ProdutosAdicionados from "./ProdutosAdicionados"
 
 export default function Header(props){
   const [sidebarAberta, setSidebarAberta] = useState(false)
@@ -22,7 +23,7 @@ export default function Header(props){
           onClick={alterar}/>
             {sidebarAberta && (
     <div className="">
-    <p>teste</p>
+   <ProdutosAdicionados />
     </div>
     )}
        

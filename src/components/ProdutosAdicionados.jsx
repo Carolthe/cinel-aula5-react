@@ -5,13 +5,13 @@ export default function ProdutosAdicionados (){
             <img src="#" />
             </div>
             <div>
-            <p>nome do produto</p>
-            <p>10£</p>
+            <p className="produto-add">nome do produto</p>
+            <p className="valor-produtos">10£</p>
             </div>
-            <div className="quantidade">
-            <button> mais </button>
-            <p>2</p>
-            <button> menos </button>
+            <div className="container-quantidade">
+            <button className="quantidade"> + </button>
+            <p className="numero-produtos">2</p>
+            <button className="quantidade">-</button>
             </div>
             <div className="remover">X</div>
         </div>
