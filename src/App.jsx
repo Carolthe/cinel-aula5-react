@@ -2,7 +2,7 @@ import './App.css'
 // Componentes
 import Header from './components/Header'
 import Templete from './components/Templete'
-import Produtos from './components/ProdutosCard'
+import ProdutosCard from './components/ProdutosCard'
 import Footer from './components/Footer'
 
 // Imagens
@@ -23,9 +23,15 @@ import pistache from './img/produtos/pistache.png'
 import facebook from './img/facebook.png'
 import instagram from './img/instagram.png'
 import pinterest from './img/pinterest.png'
+import { useState } from 'react'
 
 
 function App() {
+  const [addCarrinho, setAddCarrinho] = useState([])
+  function adicionarAoCarrinho (produto){
+    setAddCarrinho([...addCarrinho, produto])
+    console.log(addCarrinho)
+  }
   
 const sobremesas =[
   {id: 0, 
@@ -58,46 +64,46 @@ const sobremesas =[
     paragrafo: "Morango Trufado", 
     preço: "10 €uros", 
     button: "Adicionar",},
-  {id: 5, 
+  {id: 6, 
     imagem: frutosVermelhos, 
     paragrafo: "Morango com Creme Vermelho", 
-    preço: "10 €uros", 
+    preco: "10 €uros", 
     button: "Adicionar",},
-  {id: 5, 
+  {id: 7, 
     imagem: ganacheLimao, 
     paragrafo: "Ganhachi com Creme de Limão", 
-    preço: "10 €uros", 
+    preco: "10 €uros", 
     button: "Adicionar",},
-  {id: 5, 
+  {id: 8, 
     imagem: limao, 
     paragrafo: "Limão com Creme Branco", 
-    preço: "10 €uros", 
+    preco: "10 €uros", 
     button: "Adicionar",},
-  {id: 5, 
+  {id: 9, 
     imagem: morangoCreme, 
     paragrafo: "Cereja com Creme Branco", 
-    preço: "10 €uros", 
+    preco: "10 €uros", 
     button: "Adicionar",},
-  {id: 5, 
+  {id: 10, 
     imagem: nutella, 
     paragrafo: "Nutella com Cereja", 
-    preço: "10 €uros", 
+    preco: "10 €uros", 
     button: "Adicionar",},
-  {id: 5, 
+  {id: 11, 
     imagem: pistache, 
     paragrafo: "Pistache com Amendoas", 
-    preço: "10 €uros", 
+    preco: "10 €uros", 
     button: "Adicionar",},
 ]
   return (
   <div>
-      <Header logo={logo} carrinhoCompras={fechar}/>
+      <Header logo={logo} carrinhoCompras={fechar} addCarrinho={addCarrinho}/>
     <div className='div-img'>
       <Templete descricao="Delicious Cakes" />
     </div>
     <div className='container-cards'>
     {sobremesas.map(item =>(
-      <Produtos key={item.id} item={item} />) )}
+      <ProdutosCard key={item.id} item={item} adicionarAoCarrinho={adicionarAoCarrinho} />) )}
     </div>
       <Footer img1={facebook} img2={instagram} img3={pinterest} />
   </div>

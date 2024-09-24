@@ -1,13 +1,4 @@
-import { useState } from "react"
-import ProdutosCarrinho from "./ProdutosCarrinho"
-
-export default function ProdutosCard(props) {
-    const { item } = props
-    const [produtoAdd, setProdutoAdd] = useState("")
-
-    function adicionarAoCarrinho (){
-       setProdutoAdd(<ProdutosCarrinho/>)
-    }
+export default function ProdutosCard({item, adicionarAoCarrinho}) {
     return (
         <div>
             <div className="produtos">
@@ -17,8 +8,7 @@ export default function ProdutosCard(props) {
                     <p className="preco-cards">{item.preço}</p>
                 </div>
                 <button 
-                onClick={adicionarAoCarrinho}
-                value={produtoAdd}
+                onClick={()=>adicionarAoCarrinho(item)}
                 className="button-cards">{item.button}</button>
             </div>
         </div>
