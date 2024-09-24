@@ -91,16 +91,15 @@ const sobremesas =[
 ]
   return (
   <div>
-      <Header logo={logo} hamburguers="" bolos="" carrinhoCompras={fechar}/>
+      <Header logo={logo} carrinhoCompras={fechar}/>
     <div className='div-img'>
-      <Templete   descricao="Delicious Cakes" />
+      <Templete descricao="Delicious Cakes" />
     </div>
-    <div className='caixa'>
-  
+    <div className='container-cards'>
     {sobremesas.map(item =>(
       <Produtos key={item.id} item={item} />) )}
     </div>
-    <Footer img1={facebook} img2={instagram} img3={pinterest} />
+      <Footer img1={facebook} img2={instagram} img3={pinterest} />
   </div>
   )
 }
