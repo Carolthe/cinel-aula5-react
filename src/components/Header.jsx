@@ -6,6 +6,7 @@ import ProdutosAdicionados from "./ProdutosCarrinho"
 export default function Header(props) {
 
   const [sidebarAberta, setSidebarAberta] = useState(false)
+  const [addCarrinho, setAddCarrinho] = useState ("")
 
   function alterar() {
     setSidebarAberta(!sidebarAberta)
