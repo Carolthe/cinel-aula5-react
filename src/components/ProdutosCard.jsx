@@ -5,7 +5,7 @@ export default function ProdutosCard({item, adicionarAoCarrinho}) {
                 <img className="imagem-cards" src={item.imagem} />
                 <div className="paragrafo-cards">
                     <p className="descricao-cards" >{item.paragrafo}</p>
-                    <p className="preco-cards">{item.preço}</p>
+                    <p className="valor-card">{item.valor}</p>
                 </div>
                 <button 
                 onClick={()=>adicionarAoCarrinho(item)}
