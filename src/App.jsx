@@ -8,121 +8,79 @@ import Footer from "./components/Footer";
 // Imagens
 import logo from "./img/logo.png";
 import fechar from "./img/fechar.png";
-import cocoChocolate from "./img/produtos/cocoChocolate.png";
-import boloMorango from "./img/produtos/boloMorango.png";
-import cafe from "./img/produtos/cafe.png";
-import chocolateBrancoMorango from "./img/produtos/chocolateBrancoMorango.png";
-import abacaxiCoco from "./img/produtos/abacaxiCoco.png";
-import frutosVermelhos from "./img/produtos/frutosVermelhos.png";
-import ganacheLimao from "./img/produtos/ganacheLimao.png";
-import morangoTrufado from "./img/produtos/morangoTrufado.png";
-import morangoCreme from "./img/produtos/morangoCreme.png";
-import limao from "./img/produtos/limao.png";
-import nutella from "./img/produtos/nutella.png";
-import pistache from "./img/produtos/pistache.png";
 import facebook from "./img/facebook.png";
 import instagram from "./img/instagram.png";
 import pinterest from "./img/pinterest.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { sobremesas } from "./dados/sobremesas.js";
 
 function App() {
   const [addCarrinho, setAddCarrinho] = useState([]);
+  const [totalValor, setTotalValor] = useState(0);
+
   function adicionarAoCarrinho(produto) {
+    const produtoExiste = addCarrinho.find((item) => item.id === produto.id);
+
+    if (produtoExiste) {
+      const index = addCarrinho.findIndex((item) => item.id === produto.id);
+
+      addCarrinho[index].quantidade++;
+
+      setAddCarrinho([...addCarrinho]);
+      return;
+    }
+
     setAddCarrinho([...addCarrinho, produto]);
-    console.log(addCarrinho);
   }
 
-  function removerDoCarrinho() {}
+  function removerDoCarrinho(id) {
+    setAddCarrinho(addCarrinho.filter((item) => item.id !== id));
+  }
 
-  const sobremesas = [
-    {
-      id: 0,
-      imagem: boloMorango,
-      paragrafo: "Chocolate e Morango",
-      valor: "9 €uros",
-      button: "Adicionar",
-    },
-    {
-      id: 1,
-      imagem: cafe,
-      paragrafo: "Creme com Cafe",
-      valor: "7 €uros",
-      button: "Adicionar",
-    },
-    {
-      id: 2,
-      imagem: cocoChocolate,
-      paragrafo: "Chocolate com Coco",
-      valor: "10 €uros",
-      button: "Adicionar",
-    },
-    {
-      id: 3,
-      imagem: chocolateBrancoMorango,
-      paragrafo: "Creme com Morango",
-      valor: "5 €uros",
-      button: "Adicionar",
-    },
-    {
-      id: 4,
-      imagem: abacaxiCoco,
-      paragrafo: "Abacaxi com Coco",
-      valor: "10 €uros",
-      button: "Adicionar",
-    },
-    {
-      id: 5,
-      imagem: morangoTrufado,
-      paragrafo: "Morango Trufado",
-      valor: "10 €uros",
-      button: "Adicionar",
-    },
-    {
-      id: 6,
-      imagem: frutosVermelhos,
-      paragrafo: "Creme Vermelho",
-      valor: "10 €uros",
-      button: "Adicionar",
-    },
-    {
-      id: 7,
-      imagem: ganacheLimao,
-      paragrafo: "Ganhachi com Limão",
-      valor: "10 €uros",
-      button: "Adicionar",
-    },
-    {
-      id: 8,
-      imagem: limao,
-      paragrafo: "Limão com Creme",
-      valor: "10 €uros",
-      button: "Adicionar",
-    },
-    {
-      id: 9,
-      imagem: morangoCreme,
-      paragrafo: "Cereja com Creme",
-      valor: "10 €uros",
-      button: "Adicionar",
-    },
-    {
-      id: 10,
-      imagem: nutella,
-      paragrafo: "Nutella com Cereja",
-      valor: "10 €uros",
-      button: "Adicionar",
-    },
-    {
-      id: 11,
-      imagem: pistache,
-      paragrafo: "Pistache",
-      valor: "10 €uros",
-      button: "Adicionar",
-    },
-  ];
+  function somarValorCarrinho() {
+    const totalValor = addCarrinho.reduce(
+      (total, item) => total + item.valor * item.quantidade,
+      0
+    );
+    setTotalValor(totalValor);
+  }
+
+  function modificarQuantidade(id, operador) {
+    const produtoExiste = addCarrinho.find((item) => item.id === id);
+
+    if (produtoExiste) {
+      const index = addCarrinho.findIndex((item) => item.id === id);
+
+      switch (operador) {
+        case "+":
+          addCarrinho[index].quantidade++;
+          break;
+        case "-":
+          if (addCarrinho[index].quantidade - 1 > 0) {
+            addCarrinho[index].quantidade--;
+          }
+          break;
+      }
+
+      setAddCarrinho([...addCarrinho]);
+      return;
+    }
+  }
+
+  useEffect(() => {
+    somarValorCarrinho();
+  }, [addCarrinho]);
+
   return (
     <div>
-      <Header logo={logo} carrinhoCompras={fechar} addCarrinho={addCarrinho} />
+      <Header
+        logo={logo}
+        carrinhoCompras={fechar}
+        addCarrinho={addCarrinho}
+        removerDoCarrinho={removerDoCarrinho}
+        totalValor={totalValor}
+        modificarQuantidade={modificarQuantidade}
+      />
       <div className="div-img">
         <Templete descricao="Delicious Cakes" />
       </div>
