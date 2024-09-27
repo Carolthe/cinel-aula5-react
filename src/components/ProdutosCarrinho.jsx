@@ -8,12 +8,12 @@ export default function ProdutosCarrinho({
   return (
     <div className="cards-carrinho">
       {addCarrinho.map((item) => (
-        <div className="container" key={item.id}>
+        <div key={item.id}>
           <div className="img-add">
             <img className="imagem-card-carrinho" src={item.imagem} />
           </div>
-          <div className="descricao-card">
-            <div>
+          <div className="carrinho-descricao">
+            
               <p className="produto-add">{item.paragrafo}</p>
               <p className="valor-produtos-carrinho">{item.valor} €uros</p>
               <div className="container-quantidade">
@@ -21,16 +21,15 @@ export default function ProdutosCarrinho({
                   className="quantidade"
                   onClick={() => modificarQuantidade(item.id, "-")}
                 >
-                  menos
+                  -
                 </button>
                 <p className="numero-produtos">{item.quantidade}</p>
                 <button
                   className="quantidade"
                   onClick={() => modificarQuantidade(item.id, "+")}
                 >
-                  mais
+                  +
                 </button>
-              </div>
             </div>
           </div>
 

@@ -43,14 +43,13 @@ export default function Header({
               />
               <div className="container-total">
                 <div className="container-itens">
-                  <div className="subtotal-sidebar">
-                    <p>Subtotal</p>
-                    <p>0 €uros</p>
-                  </div>
-                  <hr />
+                  
                   <div className="total-sidebar">
                     <b>Total</b>
                     <b>{totalValor} €uros</b>
+                  </div>
+                  <div className="linha">
+                  <hr />
                   </div>
                   <button className="button-finalizar-pedido">
                     Finalizar pedido
