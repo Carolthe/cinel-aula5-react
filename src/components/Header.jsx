@@ -15,6 +15,10 @@ export default function Header({
   function alterar() {
     setSidebarAberta(!sidebarAberta);
   }
+
+  function finalizarPedido (){
+    alert("Aguarde novas atualizações, Obrigada!")
+  }
   return (
     <div className="header">
       <img src={logo} className="logo" />
@@ -41,7 +45,7 @@ export default function Header({
                 removerDoCarrinho={removerDoCarrinho}
                 modificarQuantidade={modificarQuantidade}
               />
-              <div className="container-total">
+              <div className="container-carrinho-total">
                 <div className="container-itens">
                   
                   <div className="total-sidebar">
@@ -51,7 +55,9 @@ export default function Header({
                   <div className="linha">
                   <hr />
                   </div>
-                  <button className="button-finalizar-pedido">
+                  <button 
+                  onClick={finalizarPedido}
+                  className="button-finalizar-pedido">
                     Finalizar pedido
                   </button>
                 </div>

@@ -155,7 +155,11 @@ body {
   color: white;
 }
 /* Produtos adicionados ao carrinho (cards) */
-.container-total {
+.container-card-carrinho{
+  height: 0;
+  margin-bottom: 90px;
+}
+.container-carrinho-total {
   display: flex;
   flex-direction: row;
   justify-content: center;  
@@ -216,11 +220,13 @@ hr{
   align-items: center;
   margin-left: 30px;
   flex-direction: column;
+  margin-top: -50px;
 }
 .container-quantidade {
   display: flex;
   margin-top: 5px;
   gap: 7px;
+  
 }
 
 .img-add {

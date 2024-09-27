@@ -8,7 +8,7 @@ export default function ProdutosCarrinho({
   return (
     <div className="cards-carrinho">
       {addCarrinho.map((item) => (
-        <div key={item.id}>
+        <div className="container-card-carrinho" key={item.id}>
           <div className="img-add">
             <img className="imagem-card-carrinho" src={item.imagem} />
           </div>
